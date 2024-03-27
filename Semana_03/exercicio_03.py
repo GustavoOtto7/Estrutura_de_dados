@@ -18,15 +18,17 @@ def lista_imprime(lst):
         atual = atual.prox
 
 def merge(l1, l2):
-    atual1 = l1
-    atual2 = l2
-    while atual2.prox is not None:
-        atual1.prox = atual2 
-        l3 = atual1
-        atual1 = atual2.prox 
-        atual2 = atual1.prox 
-    return l3
+    resultado = Lista()
+    atual = resultado
+    while l1 is not None and l2 is not None:
+        atual.prox = Lista(l1.info)
+        atual = atual.prox
+        l1 = l1.prox
 
+        atual.prox = Lista(l2.info)
+        atual = atual.prox
+        l2 = l2.prox
+    return resultado.prox
 
 def main():
     l1 = lista_cria()
