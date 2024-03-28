@@ -31,7 +31,6 @@ def copia(lst):
         atual = atual.prox
     return resultado
 
-
 def main():
     lst = lista_cria()
     lst = lista_insere(lst, "u")
