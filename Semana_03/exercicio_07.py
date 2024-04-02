@@ -61,6 +61,5 @@ def main():
     lst = lista_insere(lst, 12)
     lst = lista_insere(lst, 13)
     lst = lista_remove(lst, 2)
-    lst = lista_remove(lst, 1)
     lista_imprime(lst)
 main()
