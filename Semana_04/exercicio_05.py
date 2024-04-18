@@ -17,18 +17,15 @@ def pilha_push(pilha, valor):
     pilha.n = pilha.n + 1
 
 def verifica_palavra(pilha):
-    palavra = pilha.vet[0]
-    '''palavra = palavra.split(" ")
-    words = palavra.split(" ")'''
-    while palavra is True:
-        n = 0
-        n2 = 0
-        if palavra[n] == palavra[n2 - 1]:
-            n += 1
-            n2 -= 1
-        else:
-            return print(False)
-    return print(True)
+    palavra = ''.join(pilha.vet).lower().replace(" ", "")  # Convertendo para minúsculas e removendo espaços em branco
+    n = 0
+    n2 = len(palavra) - 1
+    while n < n2:
+        if palavra[n] != palavra[n2]:
+            return False
+        n += 1
+        n2 -= 1
+    return True
 
 def pilha_imprime(pilha):
     for i in range(pilha.n):
@@ -36,9 +33,13 @@ def pilha_imprime(pilha):
     return
 
 def main():
-    pilha = pilha_cria(5)   
+    pilha = pilha_cria(15)   
     palavra = input("Digite uma palavra: ")
     pilha_push(pilha, palavra)
-    verifica_palavra(pilha)
+    resultado = verifica_palavra(pilha)
+    if resultado:
+        print("A palavra é um palíndromo.")
+    else:
+        print("A palavra não é um palíndromo.")
     pilha_imprime(pilha)
 main()
