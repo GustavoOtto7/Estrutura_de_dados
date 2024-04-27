@@ -6,4 +6,3 @@ def main():
     valor = input("Digite a sua operação matemática: ")
     verificar_valor(valor, p_num, p_ope)
 main()
-
