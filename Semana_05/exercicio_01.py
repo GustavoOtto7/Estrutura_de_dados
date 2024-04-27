@@ -38,7 +38,7 @@ def lista_insere(l, v):
         while atual.prox is not None:
             atual = atual.prox 
         atual.prox = novo    
-    return l
+    return l if l is not None else novo
 
 def fila_cheia(f):
     return f.n == f.max
@@ -62,12 +62,11 @@ def main():
     fila_insere(f, 5)
     fila_imprime(f)
 ########
+    print("++++++")
     l = lista_cria()
-    lista_insere(l, 1)
-    lista_insere(l, 2)
-    lista_insere(l, 3)
-    lista_insere(l, 4)
+    l = lista_insere(l, 10)
+    l = lista_insere(l, 20)
+    l = lista_insere(l, 30)
+    l = lista_insere(l, 40)
     lista_imprime(l)
-
-
 main()
