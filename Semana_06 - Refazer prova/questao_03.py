@@ -48,7 +48,6 @@ def imprime_vetor(vetor):
     for palavra in vetor:
         print("Palavra: ", palavra, " é um políndromo!")
 
-
 def main():
     p_palavra = pilha_cria(100)
     pilha_insere(p_palavra, "arara")
@@ -59,6 +58,4 @@ def main():
     pilha_imprime(p_palavra)
     lista_palindromo = verifica_pilha_palindromos(p_palavra)
     imprime_vetor(lista_palindromo)
-
-
 main()
