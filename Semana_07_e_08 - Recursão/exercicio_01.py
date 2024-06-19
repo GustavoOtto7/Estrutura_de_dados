@@ -1,11 +1,9 @@
+def produto(n):
+    if n == 1:
+        return 1
+    return n * produto(n - 1)
 
-def fibo(n1, n2, valor):
-    if n1 == (valor - 1):
-        return n1 + n2
-    else:
-        temp = n2
-        n2 = n1 + n2
-        n1 = temp
-        return fibo(n1 + 1, n2, valor)
-
-print(fibo(0, 1, 10))
+def main():
+    n = int(input("Digite o número desejado:"))
+    print(produto(n))
+main()
